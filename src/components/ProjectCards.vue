@@ -7,10 +7,10 @@ const error = ref(null)
 
 // Add projects with their order
 const featuredProjects = {
-  'matchas-marketplace': 1,
+  'Matchas-Marketplace': 1,
   'Snake-Game': 2,
   'Game-Backlog-Organizer': 3
-  // Add more projects with their order
+  
 }
 
 const fetchProjects = async () => {

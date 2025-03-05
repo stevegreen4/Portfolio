@@ -3,6 +3,8 @@ import { ref } from 'vue'
 import HelloSlider from '../components/HelloSlider.vue'
 import TopHeader from '../components/TopHeader.vue'
 import ProjectCards from '../components/ProjectCards.vue'
+import SkillsSection from '../components/SkillsSection.vue'
+import IntroBlock from '../components/IntroBlock.vue'
 
 const showContent = ref(false)
 
@@ -17,7 +19,9 @@ const handleAnimationComplete = () => {
     <div v-if="showContent" class="content-wrapper">
       <TopHeader />
       <main>
+        <IntroBlock />
         <ProjectCards />
+        <SkillsSection />
       </main>
     </div>
   </Transition>
