@@ -1,5 +1,13 @@
 <script setup>
 import { RouterLink } from 'vue-router'
+
+const scrollToAbout = (e) => {
+  e.preventDefault()
+  document.getElementById('about').scrollIntoView({ 
+    behavior: 'smooth',
+    block: 'start'
+  })
+}
 </script>
 
 <template>
@@ -9,7 +17,7 @@ import { RouterLink } from 'vue-router'
             <li><a href='../../public/Stephen Green Resume.pdf' target="_blank">Resume</a></li>
             <li><a href="https://www.linkedin.com/in/stevedgreen/" target="_blank">LinkedIn</a></li>
             <li><a href="https://github.com/stevegreen4" target="_blank">GitHub</a></li>
-            <li><RouterLink to="/about">About</RouterLink></li>
+            <li><a href="#about" @click="scrollToAbout">About</a></li>
         </ul>
     </header>
 </template>

@@ -3,7 +3,7 @@ import PictureRoll from '../components/PictureRoll.vue'
 </script>
 
 <template>
-  <div class="about-section">
+  <div id="about" class="about-section">
     <h2>About Me</h2>
     <p>
       bio about myself. will include my professional accomplisments, followed by things I do in my free time. 
