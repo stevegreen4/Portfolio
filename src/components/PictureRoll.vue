@@ -46,18 +46,24 @@ onUnmounted(() => {
   max-width: 800px;
   margin: 0 auto;
   overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.1); /* Optional: helps visualize the container */
 }
 
 .slider-container {
   position: relative;
   width: 100%;
   aspect-ratio: 16/9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 img {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
   object-fit: contain;
 }
 

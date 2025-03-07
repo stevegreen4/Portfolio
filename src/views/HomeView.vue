@@ -2,9 +2,11 @@
 import { ref } from 'vue'
 import HelloSlider from '../components/HelloSlider.vue'
 import TopHeader from '../components/TopHeader.vue'
-import ProjectCards from '../components/ProjectCards.vue'
-import SkillsSection from '../components/SkillsSection.vue'
+import ProjectCards from '../components/SoftwareProjects.vue'
+import SkillsSection from '../components/SkillsHeader.vue'
 import IntroBlock from '../components/IntroBlock.vue'
+import AboutSection from '../components/AboutSection.vue'
+
 
 const showContent = ref(false)
 
@@ -20,8 +22,9 @@ const handleAnimationComplete = () => {
       <TopHeader />
       <main>
         <IntroBlock />
-        <ProjectCards />
+        
         <SkillsSection />
+        <AboutSection />
       </main>
     </div>
   </Transition>
