@@ -5,12 +5,23 @@ const projects = ref([])
 const loading = ref(true)
 const error = ref(null)
 
-// Add projects with their order
+// Add projects with their order, display names, and GitHub Pages URLs
 const featuredProjects = {
-  'Matchas-Marketplace': 1,
-  'Snake-Game': 2,
-  'Game-Backlog-Organizer': 3
-  
+  'Matchas-Marketplace': {
+    order: 1,
+    displayName: 'Matchas Marketplace',
+    pagesUrl: 'https://stevegreen4.github.io/Matchas-Marketplace/'
+  },
+  'Snake-Game': {
+    order: 2,
+    displayName: 'Snake Game',
+    pagesUrl: 'https://stevegreen4.github.io/Snake-Game/'
+  },
+  'Game-Backlog-Organizer': {
+    order: 3,
+    displayName: 'Game Backlog Organizer',
+    pagesUrl: 'https://stevegreen4.github.io/Game-Backlog-Organizer/'
+  }
 }
 
 const fetchProjects = async () => {
@@ -19,19 +30,19 @@ const fetchProjects = async () => {
     if (!response.ok) throw new Error('Failed to fetch projects')
     
     const data = await response.json()
-    // Filter and sort projects
     projects.value = data
       .filter(repo => repo.name in featuredProjects)
       .map(repo => ({
         id: repo.id,
-        name: repo.name,
+        name: featuredProjects[repo.name].displayName,
+        repoName: repo.name,
         description: repo.description,
         url: repo.html_url,
+        pagesUrl: featuredProjects[repo.name].pagesUrl,
         language: repo.language,
-        stars: repo.stargazers_count,
-        order: featuredProjects[repo.name]
+        order: featuredProjects[repo.name].order
       }))
-      .sort((a, b) => a.order - b.order) // Sort by the order you specified
+      .sort((a, b) => a.order - b.order)
   } catch (e) {
     error.value = "Sorry there was an error loading my projects. It will be fixed soon."
   } finally {
@@ -67,11 +78,18 @@ onMounted(() => {
             {{ project.language }}
           </span>
         </div>
-        <a :href="project.url" 
-           target="_blank" 
-           class="view-project">
-          View Project
-        </a>
+        <div class="button-container">
+          <a :href="project.url" 
+             target="_blank" 
+             class="view-project">
+            View Code
+          </a>
+          <a :href="project.pagesUrl" 
+             target="_blank" 
+             class="view-project live-site">
+            Live Site
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -115,24 +133,46 @@ onMounted(() => {
 
 .project-details {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 1rem;
   font-size: 0.9rem;
   color: #888;
 }
 
+.language {
+  padding: 0.25rem 0.75rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.button-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
 .view-project {
-  display: inline-block;
+  flex: 1;
+  text-align: center;
   padding: 0.5rem 1rem;
   background: #333;
   color: white;
   text-decoration: none;
   border-radius: 4px;
-  transition: background 0.2s;
+  transition: all 0.2s ease;
+}
+
+.view-project.live-site {
+  background: #2a6;  /* Different color for live site button */
 }
 
 .view-project:hover {
   background: #444;
+  transform: translateY(-2px);
+}
+
+.view-project.live-site:hover {
+  background: #3b7;
 }
 
 .loading, .error {
