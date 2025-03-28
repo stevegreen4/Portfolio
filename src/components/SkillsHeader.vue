@@ -83,14 +83,21 @@ h3 {
     margin: 0;
     border-radius: 8px;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 h3:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+    color: #00855D; 
 }
 
 h3.active {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+    color: #00855D; 
 }
 
 .section-content {

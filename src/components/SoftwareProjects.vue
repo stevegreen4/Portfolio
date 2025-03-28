@@ -97,7 +97,7 @@ onMounted(() => {
 
 <style scoped>
 .projects-container {
-  padding: 5rem;
+  padding: 10px;
   max-width: 1200px;
   margin: 0 auto;
 }

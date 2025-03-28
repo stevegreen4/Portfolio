@@ -3,12 +3,19 @@
 </script>
 
 <template>
+    <h4>
+        I have put on various events from local 5k's to international affairs hosting thousands of people. 
+        Check out some of the skills I have aquired from these events. 
+    </h4>
     <ul>
         <li>
-            bullet point for skill 
+            Controlled event logistics such as registration, permits, police coordination, recruiting and managing volunteers, set up and tear down
         </li>
         <li>
-            bullet point 
+            Procured all equipment and services needed for events including t-shirts, medals, food, and goody bags
+        </li>
+        <li>
+            Compiled event budgets, financial reconciliation, and post-event recaps. 
         </li>
     </ul>
     <div class="pic-container">

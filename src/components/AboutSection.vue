@@ -16,7 +16,7 @@ import PictureRoll from '../components/PictureRoll.vue'
 
 <style scoped>
 .about-section {
-  padding: 4rem 2rem;
+  padding: 0 2rem;
   text-align: center;
   max-width: 1200px;
   margin: 0 auto;

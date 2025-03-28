@@ -46,7 +46,7 @@ onUnmounted(() => {
   max-width: 800px;
   margin: 0 auto;
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.1); /* Optional: helps visualize the container */
+  
 }
 
 .slider-container {
